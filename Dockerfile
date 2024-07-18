@@ -1,4 +1,4 @@
-FROM linuxserver/ffmpeg:4.4-cli-ls40
+FROM python:3.10.12
 
 RUN apt update \
-    && apt install -y python3.10 python3-pip alsa-utils
+    && apt install -y ffmpeg alsa-utils
