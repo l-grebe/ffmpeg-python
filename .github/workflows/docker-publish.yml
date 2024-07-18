@@ -18,10 +18,10 @@ on:
 env:
   # Use docker.io for Docker Hub if empty
   # REGISTRY: ghcr.io
-  REGISTRY: docker.io
-  # REGISTRY: registry.cn-beijing.aliyuncs.com
+  # REGISTRY: docker.io
+  REGISTRY: registry.cn-beijing.aliyuncs.com
   # github.repository as <account>/<repo>
-  IMAGE_NAME: hu849434163457/ffmpeg-python
+  IMAGE_NAME: hu849434163457/${{ github.event.repository.name }}
 
 jobs:
   build-docker-image:
@@ -59,8 +59,10 @@ jobs:
         uses: docker/login-action@343f7c4344506bcbf9b4de18042ae17996df046d # v3.0.0
         with:
           registry: ${{ env.REGISTRY }}
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+          # username: ${{ secrets.DOCKERHUB_USERNAME }}
+          # password: ${{ secrets.DOCKERHUB_PASSWORD }}
+          username: ${{ secrets.DOCKERALI_USERNAME }}
+          password: ${{ secrets.DOCKERALI_PASSWORD }}
 
       # Extract metadata (tags, labels) for Docker
       # https://github.com/docker/metadata-action

@@ -1,4 +1,4 @@
 # ffmpeg-python
 
-python version: 3.10
-ffmpeg version: ???
+- python version: 3.10
+- ffmpeg version: ???
